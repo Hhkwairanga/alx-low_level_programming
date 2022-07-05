@@ -1,17 +1,17 @@
-#include <ctype.h>
+#include "main.h"
 /**
   * print_alphabet - prints the lowercase alphabet
   *
   * Return- void
   */
-void print_alphabet(void)
+void print_alphabet(main)
 {
 char alphabet[26] = "abcdefghijklmnopqrstuvwxyz";
 int x;
 	for (x = 0; x < 26; x++)
 	{
-		putchar(alphabet[x]);
+		_putchar(alphabet[x]);
 	}
- putchar('\n');
+_putchar('\n');
 }
 
