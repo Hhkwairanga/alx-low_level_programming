@@ -2,15 +2,15 @@
 /**
   * print_alphabet - prints the lowercase alphabet
   *
-  * Return- void
+  * Return void
   */
-void print_alphabet(main)
+void print_alphabet(void)
 {
-char alphabet[26] = "abcdefghijklmnopqrstuvwxyz";
-int x;
-	for (x = 0; x < 26; x++)
+char c;
+
+	for (c = 'a'; c <= 'z'; c++)
 	{
-		_putchar(alphabet[x]);
+		_putchar(c);
 	}
 _putchar('\n');
 }
