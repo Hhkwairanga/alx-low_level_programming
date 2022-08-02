@@ -12,10 +12,10 @@
  12         char *name;
  13         float age;
  14         char *owner;
- 15 } dog_t;
+ 15 } dog;
  16
- 17 void init_dog(struct dog *d, char *name, float     age, char *owner);
- 18 void print_dog(struct dog *d);
- 19 dog_t *new_dog(char *name, float age, char *own    er);
- 20 void free_dog(dog_t *d);
+ 17 void init_dog(struct dog, char *name, float     age, char *owner);
+ 18 void print_dog(struct dog);
+ 19 dog_t *new_dog(char *name, float age, char *owner);
+ 20 void free_dog(dog);
  21 #endif
