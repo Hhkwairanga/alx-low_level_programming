@@ -5,7 +5,7 @@
  * 
  * @name: string of name 
  * 
- * @f: pointer that takes stringa as argument
+ * @f: function pointer that takes stringa as argument
  */
  
 void print_name(char *name, void (*f)(char *))
