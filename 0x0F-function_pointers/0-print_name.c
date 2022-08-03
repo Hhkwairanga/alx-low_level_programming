@@ -2,17 +2,15 @@
 #include "function_pointers.h"
 
 /**
- * print_name - prints a name as is
+ * print_name - prints a name from pinter function
  * 
- * @name: name of the person
+ * @name: string of name 
  * 
- * @f: char
- *
- * Return: Nothing.
+ * @f: pointer that takes stringa as argument
  */
  
 void print_name(char *name, void (*f)(char *))
 {
 	if (name && f)
-	f(name);
+		f(name);
 }
