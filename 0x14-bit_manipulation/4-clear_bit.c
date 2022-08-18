@@ -1,21 +1,24 @@
-#include "holberton.h"
-
+#include "main.h"
+#include <stdio.h>
 /**
- * clear_bit - put value bit with 0
- * @n: pointer number
- * @index: position for 0
- * Return: 1 || -1
+ * clear_bit - set the value of a bit to 0 at a given index
+ * @n: pointer to decimal number to change
+ * @index: index position to change
+ * Return: 1 if it worked, -1 if error
  */
 int clear_bit(unsigned long int *n, unsigned int index)
 {
-	unsigned int nBits = 8;
+	unsigned long int i;
+	unsigned int hold;
 
-	nBits = (sizeof(n) * nBits) - 1;
-	if (index >= nBits)
+	if (index > 64)
 		return (-1);
-	if (n)
-		*n &= ~(1 << index);
-	else
-		return (0);
+	hold = index;
+	for (i = 1; hold > 0; i *= 2, hold--)
+		;
+
+	if ((*n >> index) & 1)
+		*n -= i;
+
 	return (1);
 }

@@ -1,37 +1,29 @@
-#include "holberton.h"
+#include "main.h"
+#include <stdio.h>
 
 /**
- * print_binary - print binary (representation)
- * @n: number
+ * print_binary - print binary representation of a number
+ * @n: decimal number to print as binary
  */
 void print_binary(unsigned long int n)
 {
-	int nBits = 8;
-	unsigned long int answer = 0, c_binary = 1;
+	unsigned long int temp;
+	int shifts;
 
-	nBits = (sizeof(n) * 8) - 1;
-	/**
-	 * 10000000000000000000000000000000
-	 * 2147483648
-	 */
-	c_binary = c_binary << nBits;
 	if (n == 0)
 	{
-		_putchar('0');
+		printf("0");
 		return;
 	}
-	/**
-	 * avoid left zeros, and take a step to the right.
-	 * and get the number of digits
-	 */
-	while (!(n & c_binary))
-		c_binary = c_binary >> 1;
-	for (; c_binary; c_binary = c_binary >> 1)
+
+	for (temp = n, shifts = 0; (temp >>= 1) > 0; shifts++)
+		;
+
+	for (; shifts >= 0; shifts--)
 	{
-		answer = n & c_binary;
-		if (answer)
-			_putchar('1');
+		if ((n >> shifts) & 1)
+			printf("1");
 		else
-			_putchar('0');
+			printf("0");
 	}
 }
